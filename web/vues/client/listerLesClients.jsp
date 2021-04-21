@@ -1,26 +1,29 @@
 <%-- 
-    Document   : categVenteModifier
-    Created on : 5 nov. 2020, 15:26:18
-    Author     : Alexis
+    Document   : listerLesClients
+    Created on : 20 avr. 2021, 16:57:47
+    Author     : Thibault
 --%>
-<%@page import="formulaires.CategVenteForm"%>
-<%@page import="modele.CategVente"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="modele.Client"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
         <link rel="stylesheet" href="../css/stylesheet.css">
         <!-- JS, Popper.js, and jQuery -->
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Modification d'une categorie de vente</title>
+        <link rel="shortcut icon" href="../vues/images/logo.ico" />
+        <title>Liste les clients</title>
     </head>
-    <body>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <body style="position: relative; min-height: 100vh;">
+        <div style="padding-bottom: 170px">
+       <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <a class="navbar-brand" href="#">
                <img src="../vues/images/logo.jpg" width="50" height="40" style="display: inline-block;">
             </a>
@@ -43,6 +46,7 @@
           <a class="dropdown-item" href="../ServletAdmin/listerLesLieux">Lister Les Lieux</a>
           <a class="dropdown-item" href="../ServletAdmin/listerLesPays">Lister Les Pays</a>
           <a class="dropdown-item" href="../ServletAdmin/listerLesCategVente">Lister Les CategVentes</a>
+          <a class="dropdown-item" href="../ServletClient/listerLesClients">Lister Les Clients</a>
         </div>
       </li>
       </li>
@@ -61,44 +65,79 @@
     </ul>
   </div>
 </nav>
-    <center><h1>Modifier la catégorie de vente</h1></center>
-        
-          <%
-        
-        CategVenteForm form = (CategVenteForm)request.getAttribute("form");
-        CategVente uneCategVente = (CategVente)request.getAttribute("plaCategVente");
-        
+    <center>
+        <h1>LISTE DES CLIENTS</h1>
+    </center>
+            <%
+        ArrayList<Client> lesClients = (ArrayList)request.getAttribute("pLesClients");
         %>
         
-        <%
-                        String erreur = "";
-                        if((String)request.getAttribute("pErreur")!= null){
-                            erreur = (String)request.getAttribute("pErreur");
-                            out.println("<center>");
-                            out.println("<h3>" + erreur + "</h3>");
-                            out.println("</center>");
-                        }
-                                              
-                    %>
-                        
-                
- <form  class="form-inline" action="categVenteModifier" method="POST" style="width:50%; margin-bottom:170px; background-color: #eee; border:1px solid black; border-radius: 1%">
-     <div style="width:100%; margin-top:10px">
-               <label for="code">CODE </label>
-                <input class="form-control" style="margin:0px 20% 10px 20%; width:60%" id="code" type="text" name="code"  size="30" maxlength="10" value="<%out.println(uneCategVente.getCode());%>" readonly>
-                </br>
-            <label for="libelle">LIBELLE </label>
-                <input class="form-control" style="margin:0px 20% 10px 20%; width:60%" id="libelle" type="text" name="libelle"  size="30" maxlength="50" value="<%out.println(uneCategVente.getLibelle());%>" >
-                </br>
+        
+         <table  style="width:90%; margin:auto; margin-bottom:50px;" class="table ">  
+            <thead class="thead-dark">
+                <tr>             
+                    <th class="text-center">Id</th>
+                    <th class="text-center">Nom</th>
+                    <th class="text-center">Prénom</th>
+                    <th class="text-center">Rue</th>
+                    <th class="text-center">Code Postal</th>
+                    <th class="text-center">Ville</th>
+                    <th class="text-center">Mail</th>
+                    <th class="text-center">Pays</th>
+                    
+            <br>
+            <br>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <%
+                        for(int i =0; i<lesClients.size();i++)
+                        {
+                            Client unClient = lesClients.get(i);
+                            out.println("<tr><td class='text-center'>");
+                            out.println(unClient.getId());
+                              out.println("</a></td>");
+                              
+                              out.println("<td class='text-center'>");
+                            out.println(unClient.getNom());
+                            out.println("</td>");
+                            
+                             out.println("<td class='text-center'>");
+                            out.println(unClient.getPrenom());
+                            out.println("</td>");
+                         
+                            out.println("<td class='text-center'>");
+                            out.println(unClient.getRue());
+                            out.println("</td>");
+                            
+                            out.println("<td class='text-center'>");
+                            out.println(unClient.getCopos());
+                            out.println("</td>");
+                            
+                            out.println("<td class='text-center'>");
+                            out.println(unClient.getVille());
+                            out.println("</td>");
+                            
+                            out.println("<td class='text-center'>");
+                            out.println(unClient.getMail());
+                            out.println("</td>");
+                            
+                            out.println("<td class='text-center'>");
+                            out.println(unClient.getUnPays().getNom());
+                            out.println("</td>");
+                            
 
-          <div style="text-align:center;">
-            <input type="submit" name="valider" id="valider" style="margin:10px auto;" value="Valider"/>
-            </div>
-   
-    </div>
-    </form>
-                
-                <footer class="footer-distributed" style="position:fixed; min-height: 0">
+
+                        }
+        
+        
+                        %>
+              </tr>
+            </tbody>
+        </table>
+        </div>
+              <footer class="footer-distributed" style="position:absolute; bottom:0; width:100%;height: 150px;">
 
 			<div class="footer-right">
 
@@ -123,6 +162,5 @@
 			</div>
 
 		</footer>
-          
     </body>
 </html>

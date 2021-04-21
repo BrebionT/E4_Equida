@@ -29,21 +29,22 @@
                 Cheval leCheval = (Cheval)request.getAttribute("pLeCheval");
             %>
 
-            <form class="form-inline" action="modifierCheval" method="POST">
-                    <label for="id">ID  </label>
-                    <input id="id" type="text" name="id"  size="15" maxlength="15" value ="<%out.println(leCheval.getId());%>">
+            <form class="form-inline" action="modifierCheval" method="POST" style="width:50%; margin-bottom:170px; background-color: #eee; border:1px solid black; border-radius: 1%">
+                <div style="width:100%; margin-top:10px">    
+                <label for="id">ID  </label>
+                    <input id="id" style="margin:0px 20% 10px 20%; width:60%" type="text" name="id"  size="15" maxlength="15" value ="<%out.println(leCheval.getId());%>">
                     </br>
                     
                     <label for="sire">SIRE  </label>
-                    <input id="sire" type="text" name="sire"  size="15" maxlength="15" value ="<%out.println(leCheval.getSire());%>">
+                    <input id="sire" style="margin:0px 20% 10px 20%; width:60%" type="text" name="sire"  size="15" maxlength="15" value ="<%out.println(leCheval.getSire());%>">
                     </br>
 
                     <label for="nom">NOM  </label>
-                    <input id="nom"  type="text"  name="nom" size="20" maxlength="20" value="<%out.println(leCheval.getNom());%>">      
+                    <input id="nom"  style="margin:0px 20% 10px 20%; width:60%" type="text"  name="nom" size="20" maxlength="20" value="<%out.println(leCheval.getNom());%>">      
                     </br>
                      
                     <label for="sexe">SEXE : </label>
-                    <select name="sexe" size="2">
+                    <select name="sexe" style="margin:0px 20% 10px 20%; width:60%" size="2">
                         <%
                         if(leCheval.getSexe().equals("M")){
                             out.println("<option value ='M' selected='selected'>M</option>");
@@ -56,7 +57,7 @@
                     </select>
                         
                     <label for="typeCheval">TYPE DE CHEVAL : </label>
-                <select name="typeCheval" size="5">
+                <select name="typeCheval" style="margin:0px 20% 10px 20%; width:60%" size="5">
                 <%
                         ArrayList<TypeCheval> lesTypesChevaux = (ArrayList)request.getAttribute("pLesTypesChevaux");
                         for (int i=0; i<lesTypesChevaux.size();i++){
@@ -72,7 +73,7 @@
                
                 
                 <label for="client">CLIENT : </label>
-                <select name="client" size="5">
+                <select name="client" style="margin:0px 20% 10px 20%; width:60%" size="5">
                 <%
                         ArrayList<Client> lesClients = (ArrayList)request.getAttribute("pLesClients");
                         for (int i=0; i<lesClients.size();i++){
@@ -87,7 +88,7 @@
                 </select></br>
                 
                 <label for="pere">PERE DU CHEVAL : </label>
-                <select name="pere" size="5">
+                <select name="pere" style="margin:0px 20% 10px 20%; width:60%" size="5">
                 <%
                         ArrayList<Cheval> lesChevauxPeres = (ArrayList)request.getAttribute("pLesChevauxMales");
                         for (int i=0; i<lesChevauxPeres.size();i++){
@@ -102,7 +103,7 @@
                 </select></br>
                 
                 <label for="mere">MERE DU CHEVAL : </label>
-                <select name="mere" size="5">
+                <select name="mere" style="margin:0px 20% 10px 20%; width:60%" size="5">
                 <%
                         ArrayList<Cheval> lesChevauxMeres = (ArrayList)request.getAttribute("pLesChevauxFemelles");
                         for (int i=0; i<lesChevauxMeres.size();i++){
@@ -118,38 +119,35 @@
                 </br>
                         
 
-                    <input type="submit" name="valider" id="valider" value="Valider"/>
+                    <div style="text-align:center;">
+                <input style="margin:10px auto;" type="submit" name="valider" id="valider" value="Valider"/>
+            </div>
+                </div>
                 </form>
-                     <footer class="footer-distributed">
+                     <footer class="footer-distributed" style="position:fixed; min-height: 0">
 
-                            <div class="footer-right">
+			<div class="footer-right">
 
-                                    <a href="#"><i class="fa fa-facebook"></i></a>
-                                    <a href="#"><i class="fa fa-twitter"></i></a>
-                                    <a href="#"><i class="fa fa-linkedin"></i></a>
-                                    <a href="#"><i class="fa fa-github"></i></a>
+				<a href="https://github.com/ZakinaA/ERROR500"><i class="fab fa-github"></i></a>
 
-                            </div>
+			</div>
 
-                            <div class="footer-left">
+			<div class="footer-left">
 
-                                    <p class="footer-links">
-                                            <a class="link-1" href="../index.html">Home</a>
+				<p class="footer-links">
+					&nbsp; &#149; <a class="link-1" href="../index.html"> Accueil</a> &nbsp;
 
-                                            <a href="../ServletVentes/listerLesVentes">Ventes</a>
+					&nbsp; &#149; <a class="link-1" href="../ServletVentes/listerLesVentes"> Les Ventes</a> &nbsp;
 
-                                            <a href="#">Pricing</a>
+					&nbsp; &#149; <a class="link-1" href="../ServletAdmin/listerLesLieux"> Les Lieux </a> &nbsp;
 
-                                            <a href="#">About</a>
+					&nbsp; &#149; <a class="link-1" href="../ServletAdmin/listerLesCategVente"> Les Catégories de Ventes </a> &nbsp;
 
-                                            <a href="#">Faq</a>
+				</p>
 
-                                            <a href="#">Contact</a>
-                                    </p>
+				<p>Equida &copy; 2020</p>
+			</div>
 
-                                    <p>Equida GANG &copy; 2020</p>
-                            </div>
-
-                    </footer>
+		</footer>
     </body>
 </html>

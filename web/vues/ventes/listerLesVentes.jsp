@@ -20,7 +20,8 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
         <title>LISTE DES VENTES</title>
     </head>
-    <body>
+    <body style="position: relative; min-height: 100vh;">
+        <div style="padding-bottom: 170px">
          <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <a class="navbar-brand" href="#">
                <img src="../vues/images/logo.jpg" width="50" height="40" style="display: inline-block;">
@@ -44,6 +45,7 @@
           <a class="dropdown-item" href="../ServletAdmin/listerLesLieux">Lister Les Lieux</a>
           <a class="dropdown-item" href="../ServletAdmin/listerLesPays">Lister Les Pays</a>
           <a class="dropdown-item" href="../ServletAdmin/listerLesCategVente">Lister Les CategVentes</a>
+          <a class="dropdown-item" href="../ServletClient/listerLesClients">Lister Les Clients</a>
         </div>
       </li>
       </li>
@@ -65,18 +67,18 @@
           <%
         ArrayList<Vente> lesVentes = (ArrayList)request.getAttribute("pLesVentes");
         %>
-            <table style="width:90%; margin:auto; margin-bottom:170px;" class="table table-bordered table-striped table-condensed">
-            <thead>
+            <table style="width:90%; margin:auto; margin-bottom:50px;" class="table ">  
+            <thead class="thead-dark">
                 <tr>
-                    <th>id</th>
-                    <th>nom</th>
-                    <th>date début</th>
-                    <th>catégorie</th>
-                    <th>ville</th>
-                    <th>nb boxes</th>
-                    <th>Liste des clients</th>
-                    <th>Liste des courriels</th>
-                    <th>Liste des lots</th>
+                    <th class="text-center">Id</th>
+                    <th class="text-center">Nom</th>
+                    <th class="text-center">Date Début</th>
+                    <th class="text-center">Catégorie</th>
+                    <th class="text-center">Ville</th>
+                    <th class="text-center">Nombre de boxe</th>
+                    <th class="text-center"></th>
+                    <th class="text-center"></th>
+                    <th class="text-center"></th>
             <br>
             <br>
                 </tr>
@@ -133,7 +135,8 @@
                 </tr>
             </tbody>
         </table>
-                <footer class="footer-distributed" style="position:fixed; min-height: 0">
+                </div>
+              <footer class="footer-distributed" style="position:absolute; bottom:0; width:100%;height: 150px;">
 
 			<div class="footer-right">
 

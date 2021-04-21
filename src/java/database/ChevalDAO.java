@@ -117,13 +117,7 @@ public class ChevalDAO {
             requete.setInt(6, unCheval.getUneMere().getId());
             requete.setInt(7, unCheval.getUnClient().getId());
             
-            System.out.println(unCheval.getSire());
-            System.out.println(unCheval.getNom());
-            System.out.println(unCheval.getUnTypeCheval().getId());
-            System.out.println(unCheval.getSexe());
-            System.out.println(unCheval.getUnPere().getId());
-            System.out.println(unCheval.getUneMere().getId());
-            System.out.println(unCheval.getUnClient().getId());
+            
             
            /* Exécution de la requête */
             requete.executeUpdate();

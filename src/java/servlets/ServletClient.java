@@ -95,6 +95,13 @@ public class ServletClient extends HttpServlet {
             request.setAttribute("pLesCategVente", lesCategVentes);
             this.getServletContext().getRequestDispatcher("/vues/client/clientAjouter.jsp" ).forward( request, response );
         }
+       
+       if(url.equals("/E4_Equida_Thibault/ServletClient/listerLesClients"))
+       {
+          ArrayList<Client> lesClients = ClientDAO.getLesClients(connection);
+          request.setAttribute("pLesClients", lesClients);
+           getServletContext().getRequestDispatcher("/vues/client/listerLesClients.jsp").forward(request, response);
+       }
     }
 
     /**
@@ -111,6 +118,7 @@ public class ServletClient extends HttpServlet {
                
          /* Préparation de l'objet formulaire */
         ClientForm form = new ClientForm();
+        //System.out.println("TEST TEST");
 		
         /* Appel au traitement et à la validation de la requête, et récupération du bean en résultant */
         Client unClient = form.ajouterClient(request);
@@ -118,7 +126,7 @@ public class ServletClient extends HttpServlet {
         /* Stockage du formulaire et de l'objet dans l'objet request */
         request.setAttribute( "form", form );
         request.setAttribute( "pClient", unClient );
-		
+	System.out.println(form.getErreurs().isEmpty());
         if (form.getErreurs().isEmpty()){
             // Il n'y a pas eu d'erreurs de saisie, donc on renvoie la vue affichant les infos du client 
             ClientDAO.ajouterClient(connection, unClient);

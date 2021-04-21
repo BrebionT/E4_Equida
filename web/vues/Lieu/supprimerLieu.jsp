@@ -85,6 +85,9 @@
         <form class="form-inline" action="supprimerLieu" method="POST">
             <center>
                 
+                <label for="id">ID </label>
+                <input class="form-control" style="margin-bottom:10px;" id="id"  type="text"  name="id" size="30" maxlength="30" value="<%out.println(leLieu.getId());%>" readonly>      
+                 </br>
                 
                 <label for="ville">VILLE </label>
                 <input class="form-control" style="margin-bottom:10px;" id="ville"  type="text"  name="ville" size="30" maxlength="30" value="<%out.println(leLieu.getVille());%>" readonly>      

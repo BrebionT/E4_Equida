@@ -23,10 +23,10 @@
     </head>
     <body>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="../index.html">
                <img src="../vues/images/logo.jpg" width="50" height="40" style="display: inline-block;">
             </a>
-  <a class="navbar-brand" href="#">Equida</a>
+  <a class="navbar-brand" href="../index.html">Equida</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -85,23 +85,29 @@
                     %>
                         
                 
-    <form class="form-inline" action="lieuModifier" method="POST">
-        <center>
+    <form class="form-inline" action="lieuModifier" method="POST" style="width:50%; margin-bottom:170px; background-color: #eee; border:1px solid black; border-radius: 1%">
+        <div style="width:100%; margin-top:10px">
+            
+            <label for="id">ID </label>
+                <input class="form-control" style="margin:0px 20% 10px 20%; width:60%" id="id" type="text" name="id"  size="30" maxlength="50" value="<%out.println(leLieu.getId());%>" readonly >
+                </br>
                
             <label for="ville">VILLE </label>
-                <input class="form-control" style="margin-bottom:10px;" id="ville" type="text" name="ville"  size="30" maxlength="50" value="<%out.println(leLieu.getVille());%>" >
+                <input class="form-control" style="margin:0px 20% 10px 20%; width:60%" id="ville" type="text" name="ville"  size="30" maxlength="50" value="<%out.println(leLieu.getVille());%>" >
                 </br>
         <label for="nbBoxes"> NOMBRE BOXES </label>
-                <input class="form-control" style="margin-bottom:10px;" id="nbBoxes" type="text" name="nbBoxes"  size="30" maxlength="50" value="<%out.println(leLieu.getNbBoxes());%>">
+                <input class="form-control" style="margin:0px 20% 10px 20%; width:60%" id="nbBoxes" type="text" name="nbBoxes"  size="30" maxlength="50" value="<%out.println(leLieu.getNbBoxes());%>">
                 </br>
         <label for="commentaire"> COMMENTAIRE </label>
-                <input class="form-control" style="margin-bottom:10px;" id="commentaire" type="text" name="commentaire"  size="30" maxlength="255" value="<%out.println(leLieu.getCommentaires());%>">
+                <input class="form-control" style="margin:0px 20% 10px 20%; width:60%" id="commentaire" type="text" name="commentaire"  size="30" maxlength="255" value="<%out.println(leLieu.getCommentaires());%>">
                 </br>
         
         
-        <input style="margin-bottom:170px;" type="submit" name="valider" id="valider" value="Valider"/>
+        <div style="text-align:center;">
+                <input style="margin:10px auto;" type="submit" name="valider" id="valider" value="Valider"/>
+            </div>
         
-        </center>
+        </div>
     </form>
         <footer class="footer-distributed" style="position:fixed; min-height: 0">
 

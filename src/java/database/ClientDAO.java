@@ -11,6 +11,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import modele.Client;
+import modele.Pays;
 
 /**
  *
@@ -30,7 +31,7 @@ public class ClientDAO {
         try
         {
             //preparation de la requete     
-            requete=connection.prepareStatement("select * from client ORDER BY nom");
+            requete=connection.prepareStatement("select * from client c, pays p where c.codePays = p.code ORDER BY c.id");
             
             //executer la requete
             rs=requete.executeQuery();
@@ -38,13 +39,20 @@ public class ClientDAO {
             //On hydrate l'objet métier Client avec les résultats de la requête
             while ( rs.next() ) {  
                 Client unClient = new Client();
-                unClient.setId(rs.getInt("id"));
-                unClient.setNom(rs.getString("nom"));
-                unClient.setPrenom(rs.getString("prenom"));
-                unClient.setRue(rs.getString("rue"));
-                unClient.setCopos(rs.getString("copos"));
-                unClient.setVille(rs.getString("ville"));
-                unClient.setMail(rs.getString("mail"));
+                unClient.setId(rs.getInt("c.id"));
+                unClient.setNom(rs.getString("c.nom"));
+                unClient.setPrenom(rs.getString("c.prenom"));
+                unClient.setRue(rs.getString("c.rue"));
+                unClient.setCopos(rs.getString("c.copos"));
+                unClient.setVille(rs.getString("c.ville"));
+                unClient.setMail(rs.getString("c.mail"));
+                
+                Pays unPays = new Pays();
+                unPays.setCode(rs.getString("p.code"));
+                unPays.setNom(rs.getString("p.nom"));
+                
+                unClient.setUnPays(unPays);
+                
                 lesClients.add(unClient);
             }
         }   
@@ -75,6 +83,8 @@ public class ClientDAO {
             requete.setString(4, unClient.getCopos());
             requete.setString(5, unClient.getVille());
             requete.setString(6, unClient.getUnPays().getCode());
+            
+           
 
            /* Exécution de la requête */
             requete.executeUpdate();
@@ -85,6 +95,7 @@ public class ClientDAO {
                 idGenere = rs.getInt( 1 );
                 unClient.setId(idGenere);
             }
+            
             
             // ajout des enregistrement dans la table clientcategvente
             for (int i=0;i<unClient.getLesCategVentes().size();i++){

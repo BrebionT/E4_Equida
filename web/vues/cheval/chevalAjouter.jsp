@@ -26,7 +26,8 @@
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
         <title>Cheval Ajouter</title>
     </head>
-    <body>
+    <body style="position: relative; min-height: 100vh;">
+        <div style="padding-bottom: 50px">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <a class="navbar-brand" href="#">
                <img src="../vues/images/logo.jpg" width="50" height="40" style="display: inline-block;">
@@ -50,6 +51,7 @@
           <a class="dropdown-item" href="../ServletAdmin/listerLesLieux">Lister Les Lieux</a>
           <a class="dropdown-item" href="../ServletAdmin/listerLesPays">Lister Les Pays</a>
           <a class="dropdown-item" href="../ServletAdmin/listerLesCategVente">Lister Les CategVentes</a>
+          <a class="dropdown-item" href="../ServletClient/listerLesClients">Lister Les Clients</a>
         </div>
       </li>
       </li>
@@ -89,25 +91,25 @@
                                               
                     %>
                     
-        <form class="form-inline" action="ajouterCheval" method="POST">
-            <center>
+        <form class="form-inline" action="ajouterCheval" method="POST" style="width:50%; margin-bottom:170px; background-color: #eee; border:1px solid black; border-radius: 1%">
+            <div style="width:100%; margin-top:10px">
                 <label for="nom">NOM </label>
-                <input class="form-control" style="margin-bottom:10px;" id="nom" type="text" name="nom"  size="30" maxlength="40">
+                <input class="form-control" style="margin:0px 20% 10px 20%; width:60%" id="nom" type="text" name="nom" maxlength="40">
                 </br>
                 
                 <label for="sire">SIRE </label>
-                <input class="form-control" style="margin-bottom:10px;" id="sire"  type="text"  name="sire" size="30" maxlength="13">
+                <input class="form-control" style="margin:0px 20% 10px 20%; width:60%" id="sire"  type="text"  name="sire" maxlength="13">
                  </br>
                  
                 <label for="sexe">SEXE </label>
-                <select style="margin-bottom:10px; width:300px;" class="form-control" name="sexe">
+                <select style="margin:0px 20% 10px 20%; width:60%" class="form-control" name="sexe">
                     <option value ="M">Male</option>
                     <option value ="F">Femelle</option>
                 </select> </br>    
                 
                 
                 <label for="typeCheval">TYPE DE CHEVAL </label>
-                <select style="margin-bottom:10px; width:300px;"  class="form-control" class="TypeCheval"  name="typeCheval">
+                <select style="margin:0px 20% 10px 20%; width:60%"  class="form-control" class="TypeCheval"  name="typeCheval">
                 <%
                         ArrayList<TypeCheval> lesTypesChevaux = (ArrayList)request.getAttribute("pLesTypesChevaux");
                         for (int i=0; i<lesTypesChevaux.size();i++){
@@ -120,7 +122,7 @@
                
                 
                 <label for="client">CLIENT </label>
-                <select style="margin-bottom:10px;width:300px;"  class="form-control" name="client">
+                <select style="margin:0px 20% 10px 20%; width:60%"  class="form-control" name="client">
                 <%
                         ArrayList<Client> lesClients = (ArrayList)request.getAttribute("pLesClients");
                         for (int i=0; i<lesClients.size();i++){
@@ -132,7 +134,7 @@
                 </select></br>
                 
                 <label for="pere">PERE DU CHEVAL </label>
-                <select style="margin-bottom:10px;width:300px;"  class="form-control" name="pere" >
+                <select style="margin:0px 20% 10px 20%; width:60%"  class="form-control" name="pere" >
                 <%
                         ArrayList<Cheval> lesChevauxPeres = (ArrayList)request.getAttribute("pLesChevauxMales");
                         for (int i=0; i<lesChevauxPeres.size();i++){
@@ -144,7 +146,7 @@
                 </select></br>
                 
                 <label for="mere">MERE DU CHEVAL </label>
-                <select style="margin-bottom:10px;width:300px;" class="form-control" name="mere" s">
+                <select style="margin:0px 20% 10px 20%; width:60%" class="form-control" name="mere" s">
                 <%
                         ArrayList<Cheval> lesChevauxMeres = (ArrayList)request.getAttribute("pLesChevauxFemelles");
                         for (int i=0; i<lesChevauxMeres.size();i++){
@@ -154,19 +156,28 @@
                         }
                     %>
                 </select></br>
-                <input style="margin-bottom:10px;" type="file" name="imageCheval" accept="image/*" /></br>
                 
-                <input style="margin-bottom:170px;" type="submit" name="valider" id="valider" value="Valider"/>
+                <div style="text-align:center;">
+                
+                <input type="file" name="imageCheval" accept="image/*" /></br>
+                <small>Ce boutton ci-dessous ne fonctionne pas pour l'instant </small>
+                </div>
+                
+                
+                <div style="text-align:center;">
+                <input style="margin:10px auto;" type="submit" name="valider" id="valider" value="Valider"/>
+            </div>
                 
                 
                     
-                </center>
+                </div>
             </form>
         
                  
                 
            
-                    <footer class="footer-distributed" style="position:fixed; min-height: 0">
+                    </div>
+     <footer class="footer-distributed" style="position:absolute; bottom:0; width:100%;height: 150px;">
 
 			<div class="footer-right">
 

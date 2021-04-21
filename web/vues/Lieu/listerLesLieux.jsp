@@ -6,7 +6,12 @@
 <%@page import="java.util.ArrayList"%>
 <%@page import="modele.Lieu"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
         <link rel="stylesheet" href="../css/stylesheet.css">
         <!-- JS, Popper.js, and jQuery -->
@@ -14,13 +19,12 @@
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Liste des lieux</title>
     </head>
-    <body>
+    
+    <body style="position: relative; min-height: 100vh;">
+        <div style="padding-bottom: 170px">
+            
        <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <a class="navbar-brand" href="#">
                <img src="../vues/images/logo.jpg" width="50" height="40" style="display: inline-block;">
@@ -44,6 +48,7 @@
           <a class="dropdown-item" href="../ServletAdmin/listerLesLieux">Lister Les Lieux</a>
           <a class="dropdown-item" href="../ServletAdmin/listerLesPays">Lister Les Pays</a>
           <a class="dropdown-item" href="../ServletAdmin/listerLesCategVente">Lister Les CategVentes</a>
+          <a class="dropdown-item" href="../ServletClient/listerLesClients">Lister Les Clients</a>
         </div>
       </li>
       </li>
@@ -70,13 +75,15 @@
         %>
         
         
-         <table  style="width:90%; margin:auto; margin-bottom:170px;" class="table table-bordered table-striped table-condensed">  
-            <thead>
+         <table  style="width:90%; margin:auto; margin-bottom:50px;" class="table ">  
+            <thead class="thead-dark">
                 <tr>             
-                    <th>Id</th>
-                    <th>Ville</th>
-                    <th>Nombres boxes</th>
-                    <th>Commentaire</th>                
+                    <th class="text-center">Id</th>
+                    <th class="text-center">Ville</th>
+                    <th class="text-center">Nombres boxes</th>
+                    <th class="text-center">Commentaire</th>
+                    <th class="text-center"></th>
+                    <th class="text-center"></th>
             <br>
             <br>
                 </tr>
@@ -116,10 +123,13 @@
         
         
                         %>
+                        
+                    
               </tr>
             </tbody>
         </table>
-              <footer class="footer-distributed" style="position:fixed; min-height: 0">
+        </div>
+              <footer class="footer-distributed" style="position:absolute; bottom:0; width:100%;height: 150px;">
 
 			<div class="footer-right">
 

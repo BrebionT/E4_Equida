@@ -70,7 +70,8 @@ public class LieuForm {
     public Lieu AjouterLieu( HttpServletRequest request ) {
       
         Lieu unLieu  = new Lieu();
-         
+        
+        String id = getDataForm (request, "id");
         String ville = getDataForm( request, "ville");
         String nbBoxes = getDataForm(request,"nbBoxes");
         String commentaire = getDataForm(request,"commentaire");
@@ -99,7 +100,7 @@ public class LieuForm {
             resultat = "Échec de l'ajout.";
         }
     
-      
+      unLieu.setId(Integer.parseInt(id));
       unLieu.setVille(ville);
       
       if(nbBoxes != null){

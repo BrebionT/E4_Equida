@@ -40,19 +40,19 @@ public class ClientForm {
     
     //méthode de validation du champ de saisie nom
     private void validationNom( String nom ) throws Exception {
-        if ( nom == null || nom.length() < 3 ) {
+        if ( nom == null || nom == "" ) {
         throw new Exception( "Le nom d'utilisateur doit contenir au moins 3 caractères." );
         }
     }
     
     private void validationPrenom( String prenom ) throws Exception {
-        if ( prenom == null || prenom.length() < 3 ) {
+        if ( prenom == null || prenom == "" ) {
         throw new Exception( "Le prénom d'utilisateur doit contenir au moins 3 caractères." );
         }
     }
     
     private void validationRue( String rue ) throws Exception {
-        if ( rue == null || rue.length() < 5 ) {
+        if ( rue == null || rue == "") {
         throw new Exception( "Le nom de la rue doit contenir au moins 5 caractères." );
         }
     }
@@ -64,13 +64,13 @@ public class ClientForm {
     }
     
     private void validationVille( String ville ) throws Exception {
-        if ( ville == null || ville.length() < 3 ) {
+        if ( ville == null || ville == "" ) {
         throw new Exception( "Le nom d'utilisateur doit contenir au moins 3 caractères." );
         }
     }
     
     private void validationPays( String pays ) throws Exception {
-        if ( pays == null || pays.length() < 2 ) {
+        if ( pays == null || pays == "") {
         throw new Exception( "Le pays doit être choisi." );
         }
     }
@@ -117,8 +117,9 @@ public class ClientForm {
         }
         
         Pays unPays = new Pays();
-        String p_id = getDataForm( request, "pays" );
+        String p_id = getDataForm( request, "codePays" );
         unPays.setCode(p_id);
+        
         
  
        
@@ -174,7 +175,6 @@ public class ClientForm {
         unClient.setCopos(copos);
         unClient.setVille(ville);
         unClient.setUnPays(unPays);
-               
        
         return unClient ;
     }

@@ -114,7 +114,7 @@ public class LieuDAO {
          
        
           while ( rs.next() ) {  
-               leLieu.setId(rs.getInt("id"));
+                leLieu.setId(rs.getInt("id"));
                 leLieu.setVille(rs.getString("ville"));
                 leLieu.setNbBoxes(rs.getInt("nbBoxes"));
                 leLieu.setCommentaires(rs.getString("commentaire"));
@@ -162,6 +162,8 @@ public class LieuDAO {
         try
         {
             //preparation de la requete
+            
+            System.out.println("id : "+unLieu.getId());
             requete=connection.prepareStatement("UPDATE lieu SET archive=1 WHERE id=?");
             requete.setInt(1, unLieu.getId());
             

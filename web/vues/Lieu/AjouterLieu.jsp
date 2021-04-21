@@ -20,7 +20,8 @@
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
         <title>Nouveau Lieu</title>
     </head>
-    <body>
+    <body style="position: relative; min-height: 100vh;">
+        <div style="padding-bottom: 50px">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <a class="navbar-brand" href="#">
                <img src="../vues/images/logo.jpg" width="50" height="40" style="display: inline-block;">
@@ -44,6 +45,7 @@
           <a class="dropdown-item" href="../ServletAdmin/listerLesLieux">Lister Les Lieux</a>
           <a class="dropdown-item" href="../ServletAdmin/listerLesPays">Lister Les Pays</a>
           <a class="dropdown-item" href="../ServletAdmin/listerLesCategVente">Lister Les CategVentes</a>
+          <a class="dropdown-item" href="../ServletClient/listerLesClients">Lister Les Clients</a>
         </div>
       </li>
       </li>
@@ -65,7 +67,6 @@
     <center>
         <h1>NOUVEAU LIEU</h1>
     </center>
-    <center>
         <%
             LieuForm form = (LieuForm)request.getAttribute("form");
         %>
@@ -80,28 +81,29 @@
                         }
                                               
                     %>
-        <form class="form-inline" action="AjouterLieu" method="POST">
-            <center>
+        <form class="form-inline" action="AjouterLieu" method="POST" style="width:50%; margin-bottom:170px; background-color: #eee; border:1px solid black; border-radius: 1%">
+            <div style="width:100%; margin-top:10px">
                 
             <label for="ville">VILLE  </label>
-                <input class="form-control" style="margin-bottom:10px;" id="ville" type="text" name="ville"  size="30" maxlength="50">
+                <input class="form-control" style="margin:0px 20% 10px 20%; width:60%" id="ville" type="text" name="ville" maxlength="50">
                 </br>
         <label for="Nombre box"> NOMBRE BOXES </label>
-                <input class="form-control" style="margin-bottom:10px;" id="Nombre box" type="text" name="nbBoxes"  size="30" maxlength="50">
+                <input class="form-control" style="margin:0px 20% 10px 20%; width:60%" id="Nombre box" type="text" name="nbBoxes" maxlength="50">
                 </br>
 
         <label for="Commentaire"> COMMENTAIRE </label>
 
-                <input class="form-control" style="margin-bottom:10px;" id="Commentaire" type="text" name="commentaire"  size="30" maxlength="50">
+                <input class="form-control" style="margin:0px 20% 10px 20%; width:60%" id="Commentaire" type="text" name="commentaire" maxlength="50">
                 </br>
         
         
-        <input style="margin-bottom:170px;" type="submit" name="valider" id="valider" value="Valider"/>
-        
-            </center>
+        <div style="text-align:center;">
+                <input style="margin:10px auto;" type="submit" name="valider" id="valider" value="Valider"/>
+            </div>
+            </div>
     </form>
-    </center>
-     <footer class="footer-distributed" style="position:fixed; min-height: 0">
+        </div>
+     <footer class="footer-distributed" style="position:absolute; bottom:0; width:100%;height: 150px;">
 
 			<div class="footer-right">
 
