@@ -117,7 +117,7 @@
 
 			<div class="footer-right">
 
-				<a href="https://github.com/ZakinaA/ERROR500"><i class="fab fa-github"></i></a>
+				<a href="https://github.com/BrebionT/E4_Equida"><i class="fab fa-github"></i></a>
 
 			</div>
 
