@@ -25,12 +25,13 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
         <title>Cheval Ajouter</title>
     </head>
-    <body>
+    <body style="position: relative; min-height: 100vh;">
+        <div style="padding-bottom: 50px">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="../index.html">
                <img src="../vues/images/logo.jpg" width="50" height="40" style="display: inline-block;">
             </a>
-  <a class="navbar-brand" href="#">Equida</a>
+  <a class="navbar-brand" href="../index.html">Equida</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -49,6 +50,7 @@
           <a class="dropdown-item" href="../ServletAdmin/listerLesLieux">Lister Les Lieux</a>
           <a class="dropdown-item" href="../ServletAdmin/listerLesPays">Lister Les Pays</a>
           <a class="dropdown-item" href="../ServletAdmin/listerLesCategVente">Lister Les CategVentes</a>
+          <a class="dropdown-item" href="../ServletClient/listerLesClients">Lister Les Clients</a>
         </div>
       </li>
       </li>
@@ -76,7 +78,7 @@
         %>
         
         
-         <table class="table table-bordered table-striped table-condensed">
+         <table class="table table-bordered table-striped table-condensed" style="width:50%; margin-left:25%">
             <tr><td>NOM :</td><td><% out.println(unCheval.getNom());%></td></tr>
             <tr><td>SEXE :</td><td><%  out.println(unCheval.getSexe());%></td>  </tr>
             <tr><td>SIRE  :</td><td><%  out.println(unCheval.getSire());%></td>  </tr>
@@ -93,38 +95,33 @@
                         compteur--;
                         if(compteur == 0) window.location.href = '../index.html';
                         else {	
-                            document.getElementById("redir").innerHTML = "La page va être redirigé dans "+compteur + " secondes ...";
+                            document.getElementById("redir").innerHTML = "La page va être redirigée dans "+compteur + " secondes ...";
                         }	
                     }
                     setInterval(bip, 1000)
                  </script>
                 
            
-                    <footer class="footer-distributed">
+                    </div>
+     <footer class="footer-distributed" style="position:absolute; bottom:0; width:100%;height: 150px;">
 
 			<div class="footer-right">
 
-				<a href="#"><i class="fa fa-facebook"></i></a>
-				<a href="#"><i class="fa fa-twitter"></i></a>
-				<a href="#"><i class="fa fa-linkedin"></i></a>
-				<a href="#"><i class="fa fa-github"></i></a>
+				<a href="https://github.com/BrebionT/E4_Equida"><i class="fab fa-github"></i></a>
 
 			</div>
 
 			<div class="footer-left">
 
 				<p class="footer-links">
-					<a class="link-1" href="../index.html">Home</a>
+					&nbsp; &#149; <a class="link-1" href="../index.html"> Accueil</a> &nbsp;
 
-					<a href="../ServletVentes/listerLesVentes">Ventes</a>
+					&nbsp; &#149; <a class="link-1" href="../ServletVentes/listerLesVentes"> Les Ventes</a> &nbsp;
 
-					<a href="#">Pricing</a>
+					&nbsp; &#149; <a class="link-1" href="../ServletAdmin/listerLesLieux"> Les Lieux </a> &nbsp;
 
-					<a href="#">About</a>
+					&nbsp; &#149; <a class="link-1" href="../ServletAdmin/listerLesCategVente"> Les Catégories de Ventes </a> &nbsp;
 
-					<a href="#">Faq</a>
-
-					<a href="#">Contact</a>
 				</p>
 
 				<p>Equida &copy; 2020</p>

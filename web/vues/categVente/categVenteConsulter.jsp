@@ -18,12 +18,13 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Consultation CategVente</title>
     </head>
-    <body>
+    <body style="position: relative; min-height: 100vh;">
+        <div style="padding-bottom: 50px">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#">
-               <img src="vues/images/logo.jpg" width="50" height="40" style="display: inline-block;">
+            <a class="navbar-brand" href="../index.html">
+               <img src="../vues/images/logo.jpg" width="50" height="40" style="display: inline-block;">
             </a>
-  <a class="navbar-brand" href="#">Equida</a>
+  <a class="navbar-brand" href="../index.html">Equida</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -31,17 +32,18 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="index.html">Accueil <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="../index.html">Accueil <span class="sr-only">(current)</span></a>
       </li>
        <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Listes
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="ServletVentes/listerLesVentes">Lister Les Ventes</a>
-          <a class="dropdown-item" href="ServletAdmin/listerLesLieux">Lister Les Lieux</a>
+          <a class="dropdown-item" href="../ServletVentes/listerLesVentes">Lister Les Ventes</a>
+          <a class="dropdown-item" href="../ServletAdmin/listerLesLieux">Lister Les Lieux</a>
           <a class="dropdown-item" href="../ServletAdmin/listerLesPays">Lister Les Pays</a>
           <a class="dropdown-item" href="../ServletAdmin/listerLesCategVente">Lister Les CategVentes</a>
+          <a class="dropdown-item" href="../ServletClient/listerLesClients">Lister Les Clients</a>
         </div>
       </li>
       </li>
@@ -50,24 +52,26 @@
           Ajouter
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="ServletClient/ajouterClient">Ajouter Client</a>
-          <a class="dropdown-item" href="ServletCheval/ajouterCheval">Ajouter Cheval</a>
-          <a class="dropdown-item" href="ServletAdmin/ajouterCategVente">Ajouter Catégorie</a>
-          <a class="dropdown-item" href="ServletAdmin/AjouterLieu">Ajouter Lieu</a>
-          <a class="dropdown-item" href="ServletAdmin/ajouterPays">Ajouter Pays</a>
+          <a class="dropdown-item" href="../ServletClient/ajouterClient">Ajouter Client</a>
+          <a class="dropdown-item" href="../ServletCheval/ajouterCheval">Ajouter Cheval</a>
+          <a class="dropdown-item" href="../ServletAdmin/ajouterCategVente">Ajouter Catégorie</a>
+          <a class="dropdown-item" href="../ServletAdmin/AjouterLieu">Ajouter Lieu</a>
+          <a class="dropdown-item" href="../ServletAdmin/ajouterPays">Ajouter Pays</a>
         </div>
       </li>
     </ul>
   </div>
 </nav>
+            <center>
         <h1>Infos categVente</h1>
+        </center>
         
          <%
         CategVente uneCategVente = (CategVente)request.getAttribute("pCategVente");
         %>
         
         
-         <table class="table table-bordered table-striped table-condensed">
+         <table class="table table-bordered table-striped table-condensed" style="width:50%; margin-left:25%">
             <tr><td>CODE :</td><td><% out.println(uneCategVente.getCode());%></td></tr>
             <tr><td>LIBELLE :</td><td><%  out.println(uneCategVente.getLibelle());%></td>  </tr>
           
@@ -88,31 +92,26 @@
                     }
                     setInterval(bip, 1000)
                  </script>
-        <footer class="footer-distributed">
+        </div>
+     <footer class="footer-distributed" style="position:absolute; bottom:0; width:100%;height: 150px;">
 
 			<div class="footer-right">
 
-				<a href="#"><i class="fa fa-facebook"></i></a>
-				<a href="#"><i class="fa fa-twitter"></i></a>
-				<a href="#"><i class="fa fa-linkedin"></i></a>
-				<a href="#"><i class="fa fa-github"></i></a>
+				<a href="https://github.com/BrebionT/E4_Equida"><i class="fab fa-github"></i></a>
 
 			</div>
 
 			<div class="footer-left">
 
 				<p class="footer-links">
-					<a class="link-1" href="../index.html">Home</a>
+					&nbsp; &#149; <a class="link-1" href="../index.html"> Accueil</a> &nbsp;
 
-					<a href="../ServletVentes/listerLesVentes">Ventes</a>
+					&nbsp; &#149; <a class="link-1" href="../ServletVentes/listerLesVentes"> Les Ventes</a> &nbsp;
 
-					<a href="#">Pricing</a>
+					&nbsp; &#149; <a class="link-1" href="../ServletAdmin/listerLesLieux"> Les Lieux </a> &nbsp;
 
-					<a href="#">About</a>
+					&nbsp; &#149; <a class="link-1" href="../ServletAdmin/listerLesCategVente"> Les Catégories de Ventes </a> &nbsp;
 
-					<a href="#">Faq</a>
-
-					<a href="#">Contact</a>
 				</p>
 
 				<p>Equida &copy; 2020</p>

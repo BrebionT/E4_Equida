@@ -89,6 +89,7 @@ public class ServletClient extends HttpServlet {
        if(url.equals("/E4_Equida_Thibault/ServletClient/ajouterClient"))
         {                   
             ArrayList<Pays> lesPays = PaysDAO.getLesPays(connection);
+            System.out.println(lesPays);
             request.setAttribute("pLesPays", lesPays);
             
             ArrayList<CategVente> lesCategVentes = CategVenteDAO.getLesCategVentes(connection);

@@ -8,20 +8,22 @@
 <%@page import="modele.Pays"%>
 <%@page import="formulaires.PaysForm"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
         <link rel="stylesheet" href="../css/stylesheet.css">
         <!-- JS, Popper.js, and jQuery -->
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Pays Modifier</title>
     </head>
-    <body>
+    <body style="position: relative; min-height: 100vh;">
+        <div style="padding-bottom: 50px">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <a class="navbar-brand" href="#">
                <img src="../vues/images/logo.jpg" width="50" height="40" style="display: inline-block;">
@@ -81,21 +83,24 @@
                                               
                     %>
         
-        <form class="form-inline" action="modifierPays" method="POST">
-            <center>
+        <form class="form-inline" action="modifierPays" method="POST" style="width:50%; margin-bottom:170px; background-color: #eee; border:1px solid black; border-radius: 1%">
+            <div style="width:100%; margin-top:10px">  
                 <label for="code">CODE  </label>
-                <input class="form-control" style="margin-bottom:10px;" id="code" type="text" name="code"  size="30" maxlength="3" value ="<%out.println(lePays.getCode());%>"readonly>
+                <input class="form-control" style="margin:0px 20% 10px 20%; width:60%" id="code" type="text" name="code"  size="30" maxlength="3" value ="<%out.println(lePays.getCode());%>"readonly>
                 
                 </br>
                 
                 <label for="nom">NOM  </label>
-                <input class="form-control" style="margin-bottom:10px;" id="nom"  type="text"  name="nom" size="30" maxlength="30" value="<%out.println(lePays.getNom());%>" >      
+                <input class="form-control" style="margin:0px 20% 10px 20%; width:60%" id="nom"  type="text"  name="nom" size="30" maxlength="30" value="<%out.println(lePays.getNom());%>" >      
                  </br>
 
-                <input type="submit" name="valider" id="valider" value="Valider"/>
-                </center>
+                <div style="text-align:center;">
+                <input style="margin:10px auto;" type="submit" name="valider" id="valider" value="Valider"/>
+            </div>
+                </div>
             </form>
-                 <footer class="footer-distributed" style="position:fixed; min-height: 0">
+                 </div>
+     <footer class="footer-distributed" style="position:absolute; bottom:0; width:100%;height: 150px;">
 
 			<div class="footer-right">
 

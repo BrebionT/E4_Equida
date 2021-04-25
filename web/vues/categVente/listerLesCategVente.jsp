@@ -31,7 +31,7 @@
             <a class="navbar-brand" href="../index.html">
                <img src="../vues/images/logo.jpg" width="50" height="40" style="display: inline-block;">
             </a>
-  <a class="navbar-brand" href="#">Equida</a>
+  <a class="navbar-brand" href="../index.html">Equida</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -96,17 +96,17 @@
                         for(int i =0; i<lesCategVentes.size();i++)
                         {
                             CategVente uneCategVente = lesCategVentes.get(i);
-                            out.println("<tr><td>");
+                            out.println("<tr><td class='text-center'>");
                             out.println(uneCategVente.getCode());
                               out.println("</a></td>");
                               
-                              out.println("<td>");
+                              out.println("<td class='text-center'>");
                             out.println(uneCategVente.getLibelle());
                             out.println("</td>");
                             
                           
                             
-                           out.println("<td><a href ='../ServletAdmin/categVenteModifier?codeCategVente="+ uneCategVente.getCode()+ "'>");
+                           out.println("<td class='text-center'><a href ='../ServletAdmin/categVenteModifier?codeCategVente="+ uneCategVente.getCode()+ "'>");
                         out.println("Modifier");
                         out.println("</td>");
                         

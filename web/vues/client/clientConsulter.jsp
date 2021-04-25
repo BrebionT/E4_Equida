@@ -19,10 +19,11 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Consultation CLient</title>
     </head>
-    <body>
+    <body style="position: relative; min-height: 100vh;">
+        <div style="padding-bottom: 50px">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <a class="navbar-brand" href="../index.html">
-               <img src="vues/images/logo.jpg" width="50" height="40" style="display: inline-block;">
+               <img src="../vues/images/logo.jpg" width="50" height="40" style="display: inline-block;">
             </a>
   <a class="navbar-brand" href="../index.html">Equida</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -43,6 +44,7 @@
           <a class="dropdown-item" href="../ServletAdmin/listerLesLieux">Lister Les Lieux</a>
           <a class="dropdown-item" href="../ServletAdmin/listerLesPays">Lister Les Pays</a>
           <a class="dropdown-item" href="../ServletAdmin/listerLesCategVente">Lister Les CategVentes</a>
+          <a class="dropdown-item" href="../ServletClient/listerLesClients">Lister Les Clients</a>
         </div>
       </li>
       </li>
@@ -61,14 +63,16 @@
     </ul>
   </div>
 </nav>
+            <center>
         <h1>Infos clients</h1>
+        </center>
         
          <%
         Client unClient = (Client)request.getAttribute("pClient");
         %>
         
         
-         <table class="table table-bordered table-striped table-condensed">
+         <table class="table table-bordered table-striped table-condensed" style="width:50%; margin-left:25%">
             <tr><td>NOM :</td><td><% out.println(unClient.getNom());%></td></tr>
             <tr><td>PRENOM :</td><td><%  out.println(unClient.getPrenom());%></td>  </tr>
             <tr><td>ADRESSE  :</td><td><%  out.println(unClient.getRue());%></td>  </tr>
@@ -82,7 +86,20 @@
           %>
               </td></tr>
         </table>
-        <footer class="footer-distributed" style="position:fixed; min-height: 0">
+              <h4 id="redir" style="text-align:center;">La page va être redirigé dans 5 secondes ... </h4>
+		<script>
+                    var compteur = 5;
+                    function bip() {
+                        compteur--;
+                        if(compteur == 0) window.location.href = '../index.html';
+                        else {	
+                            document.getElementById("redir").innerHTML = "La page va être redirigée dans "+compteur + " secondes ...";
+                        }	
+                    }
+                    setInterval(bip, 1000)
+                 </script>
+        </div>
+     <footer class="footer-distributed" style="position:absolute; bottom:0; width:100%;height: 150px;">
 
 			<div class="footer-right">
 

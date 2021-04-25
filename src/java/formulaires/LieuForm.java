@@ -37,7 +37,13 @@ public class LieuForm {
     
       private void setErreur( String champ, String message ) {
     erreurs.put(champ, message );
-    }  
+    }
+      
+    private void validationId( Integer id ) throws Exception {
+        if ( id == null || id <= 0 ) {
+        throw new Exception( "L'id doit être indiqué." );
+        }
+    }
       
     private void validationVille( String ville ) throws Exception {
         if ( ville == null || ville.length() < 2 ) {
@@ -46,7 +52,7 @@ public class LieuForm {
     }
     
     private void validationNbBoxes( Integer nbboxes ) throws Exception {
-        if ( nbboxes == null || nbboxes < 2 ) {
+        if ( nbboxes == null || nbboxes <= 0 ) {
         throw new Exception( "Le nombre de boxe doit être indiqué." );
         }
     }
@@ -77,6 +83,12 @@ public class LieuForm {
         String commentaire = getDataForm(request,"commentaire");
         
        try {
+             validationId( Integer.parseInt(id) );
+        } catch ( Exception e ) {
+            setErreur( "id", e.getMessage() );
+        }
+       
+       try {
              validationVille( ville );
         } catch ( Exception e ) {
             setErreur( "ville", e.getMessage() );
@@ -100,7 +112,17 @@ public class LieuForm {
             resultat = "Échec de l'ajout.";
         }
     
-      unLieu.setId(Integer.parseInt(id));
+      
+      
+      if(id != null){
+          try{
+              unLieu.setId(Integer.parseInt(id));
+          }
+          catch( Exception e ){
+               System.out.println("Erreur : "+e);
+          }
+          
+      }
       unLieu.setVille(ville);
       
       if(nbBoxes != null){

@@ -83,6 +83,10 @@
                     %>
         <form class="form-inline" action="AjouterLieu" method="POST" style="width:50%; margin-bottom:170px; background-color: #eee; border:1px solid black; border-radius: 1%">
             <div style="width:100%; margin-top:10px">
+             
+                <label title="Ici, nous n'avons pas d'id auto-incrémenté car dans la base de donnée, l'option n'est pas choisi, or je ne peux pas changer car nous avons plusieurs projets qui prennent cette BDD." for="id">ID </label>
+                <input class="form-control" style="margin:0px 20% 10px 20%; width:60%" id="id" type="text" name="id" maxlength="50">
+                </br>
                 
             <label for="ville">VILLE  </label>
                 <input class="form-control" style="margin:0px 20% 10px 20%; width:60%" id="ville" type="text" name="ville" maxlength="50">

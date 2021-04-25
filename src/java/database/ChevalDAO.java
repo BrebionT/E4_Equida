@@ -37,7 +37,7 @@ public class ChevalDAO {
         {
             //preparation de la requete     
             //codeCateg="ETE";
-            requete=connection.prepareStatement("SELECT c.*, c.photo, tc.libelle, cl.nom as nom_client, cpere.nom as nom_pere, cpere.idType as type_pere, cmere.nom as nom_mere, cmere.idType as type_mere\n" +
+            requete=connection.prepareStatement("SELECT c.*, c.photo, tc.libelle, cl.nom as nom_client,cl.prenom as prenom_client, cpere.nom as nom_pere, cpere.idType as type_pere, cmere.nom as nom_mere, cmere.idType as type_mere\n" +
 "FROM cheval c, cheval cmere, cheval cpere, typecheval tc, client cl\n" +
 "WHERE c.idType=tc.id\n" +
 "AND cmere.id=c.Mère\n" +
@@ -78,6 +78,7 @@ public class ChevalDAO {
                 
                 Client unClient = new Client();
                 unClient.setNom(rs.getString("nom_client"));
+                unClient.setPrenom(rs.getString("prenom_client"));
                 
                 unCheval.setUnPere(unChevalPere);
                 unCheval.setUneMere(unChevalMere);

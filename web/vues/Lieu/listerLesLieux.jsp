@@ -26,10 +26,10 @@
         <div style="padding-bottom: 170px">
             
        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="../index.html">
                <img src="../vues/images/logo.jpg" width="50" height="40" style="display: inline-block;">
             </a>
-  <a class="navbar-brand" href="#">Equida</a>
+  <a class="navbar-brand" href="../index.html">Equida</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -94,27 +94,27 @@
                         for(int i =0; i<lesLieux.size();i++)
                         {
                             Lieu unLieu = lesLieux.get(i);
-                            out.println("<tr><td>");
+                            out.println("<tr><td class='text-center'>");
                             out.println(unLieu.getId());
                               out.println("</a></td>");
                               
-                              out.println("<td>");
+                              out.println("<td class='text-center'>");
                             out.println(unLieu.getVille());
                             out.println("</td>");
                             
-                             out.println("<td>");
+                             out.println("<td class='text-center'>");
                             out.println(unLieu.getNbBoxes());
                             out.println("</td>");
                          
-                            out.println("<td>");
+                            out.println("<td class='text-center'>");
                             out.println(unLieu.getCommentaires());
                             out.println("</td>");
                             
-                            out.println("<td><a href ='../ServletAdmin/lieuModifier?idLieu="+ unLieu.getId()+ "'>");
+                            out.println("<td class='text-center'><a href ='../ServletAdmin/lieuModifier?idLieu="+ unLieu.getId()+ "'>");
                         out.println("Modifier lieu");
                         out.println("</td>");
                         
-                        out.println("<td><a href ='../ServletAdmin/supprimerLieu?idLieu="+ unLieu.getId()+ "'>");
+                        out.println("<td class='text-center'><a href ='../ServletAdmin/supprimerLieu?idLieu="+ unLieu.getId()+ "'>");
                         out.println("Supprimer");
                         out.println("</td>");
 

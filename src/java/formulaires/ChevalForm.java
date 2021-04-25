@@ -38,7 +38,7 @@ public class ChevalForm {
     
     //méthode de validation du champ de saisie nom
     private void validationNom( String nom ) throws Exception {
-        if ( nom == null || nom.length() < 5 ) {
+        if ( nom == null || nom.length() < 3 ) {
         throw new Exception( "Le nom du cheval doit contenir au moins 5 caractères." );
         }
     }

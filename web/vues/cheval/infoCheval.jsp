@@ -22,12 +22,13 @@
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
         <title>INFORMATIONS CHEVAL</title>
     </head>
-    <body>
+    <body style="position: relative; min-height: 100vh;">
+        <div style="padding-bottom: 50px">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="../index.html">
                <img src="../vues/images/logo.jpg" width="50" height="40" style="display: inline-block;">
             </a>
-  <a class="navbar-brand" href="#">Equida</a>
+  <a class="navbar-brand" href="../index.html">Equida</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -72,27 +73,23 @@
         Cheval unCheval = (Cheval)request.getAttribute("punCheval");
         %> 
         
-                    
-                    
-                <%
-                if(unCheval.getCheminPhoto()!=null){
-                    out.println("<div>");
-                    out.println("<h4>Photo du Cheval</h4>");
-                }else{
-                    out.println("<div style='display:none;'>");
-                }
-                        
-            %>
+
+                 <div>
+
             
                     <%
-                        out.println("<td>");
+                        
+                        if(unCheval.getCheminPhoto()!=null){
+                            out.println("<td>");
+                            out.println("<img src='"+unCheval.getCheminPhoto()+"' width='500' height='300'>");
+                            out.println("</td>");
+                        }else{
+                            out.println("<td>");
+                            out.println("<img src='../vues/images/no-image.png' width='300' height='300'>");
+                            out.println("</td>");
+                        }
                     %>
-                <img src="<%out.println(unCheval.getCheminPhoto());%>"
-                             width="500"
-                             height="350">
-                    <%
-                        out.println("</td>");
-                    %>
+                
                     </div>
                     </br>
             <table class="table table-striped" style="width:40%; margin-bottom:170px;">
@@ -213,7 +210,8 @@
                 
             </table>
         </center>
-              <footer class="footer-distributed" style="position:fixed; min-height: 0">
+               </div>
+     <footer class="footer-distributed" style="position:absolute; bottom:0; width:100%;height: 150px;">
 
 			<div class="footer-right">
 
