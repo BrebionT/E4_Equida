@@ -22,10 +22,10 @@
     <body style="position: relative; min-height: 100vh;">
         <div style="padding-bottom: 50px">
        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="../index.html">
                <img src="../vues/images/logo.jpg" width="50" height="40" style="display: inline-block;">
             </a>
-  <a class="navbar-brand" href="#">Equida</a>
+  <a class="navbar-brand" href="../index.html">Equida</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -83,11 +83,11 @@
         <form class="form-inline" action="ajouterPays" method="POST" style="width:50%; margin-bottom:170px; background-color: #eee; border:1px solid black; border-radius: 1%">
             <div style="width:100%; margin-top:10px">
                 <label for="code">CODE  </label>
-                <input class="form-control" style="margin:0px 20% 10px 20%; width:60%" id="code" type="text" name="code" maxlength="3">
+                <input class="form-control" style="margin:0px 20% 10px 20%; width:60%" id="code" type="text" name="code" maxlength="3" required>
                 </br>
                 
                 <label for="nom">NOM  </label>
-                <input class="form-control" style="margin:0px 20% 10px 20%; width:60%" id="nom"  type="text"  name="nom" maxlength="30">      
+                <input class="form-control" style="margin:0px 20% 10px 20%; width:60%" id="nom"  type="text"  name="nom" maxlength="30" required>      
                  </br>
 
                 <div style="text-align:center;">

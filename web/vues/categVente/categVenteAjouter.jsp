@@ -87,11 +87,11 @@
     <form class="form-inline" action="ajouterCategVente" method="POST" style="width:50%; margin-bottom:170px; background-color: #eee; border:1px solid black; border-radius: 1%">
             <div style="width:100%; margin-top:10px">
                 <label for="code">CODE  </label>
-                <input class="form-control" style="margin:0px 20% 10px 20%; width:60%" id="code" type="text" name="code" maxlength="5">
+                <input class="form-control" style="margin:0px 20% 10px 20%; width:60%" id="code" type="text" name="code" maxlength="5" required>
                 </br>
                 
                 <label for="libelle">LIBELLE  </label>
-                <input class="form-control" style="margin:0px 20% 10px 20%; width:60%" id="libelle"  type="text"  name="libelle" maxlength="30">      
+                <input class="form-control" style="margin:0px 20% 10px 20%; width:60%" id="libelle"  type="text"  name="libelle" maxlength="30" required>      
                  </br>
                      <div style="text-align:center;">
                 <input style="margin:10px auto;" type="submit" name="valider" id="valider" value="Valider"/>

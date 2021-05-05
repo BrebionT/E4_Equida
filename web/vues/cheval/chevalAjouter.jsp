@@ -29,10 +29,10 @@
     <body style="position: relative; min-height: 100vh;">
         <div style="padding-bottom: 50px">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="../index.html">
                <img src="../vues/images/logo.jpg" width="50" height="40" style="display: inline-block;">
             </a>
-  <a class="navbar-brand" href="#">Equida</a>
+  <a class="navbar-brand" href="../index.html">Equida</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -94,22 +94,22 @@
         <form class="form-inline" action="ajouterCheval" method="POST" style="width:50%; margin-bottom:170px; background-color: #eee; border:1px solid black; border-radius: 1%">
             <div style="width:100%; margin-top:10px">
                 <label for="nom">NOM </label>
-                <input class="form-control" style="margin:0px 20% 10px 20%; width:60%" id="nom" type="text" name="nom" maxlength="40">
+                <input class="form-control" style="margin:0px 20% 10px 20%; width:60%" id="nom" type="text" name="nom" maxlength="40" required>
                 </br>
                 
                 <label for="sire">SIRE </label>
-                <input class="form-control" style="margin:0px 20% 10px 20%; width:60%" id="sire"  type="text"  name="sire" maxlength="13">
+                <input class="form-control" style="margin:0px 20% 10px 20%; width:60%" id="sire"  type="text"  name="sire" maxlength="13" required>
                  </br>
                  
                 <label for="sexe">SEXE </label>
-                <select style="margin:0px 20% 10px 20%; width:60%" class="form-control" name="sexe">
+                <select style="margin:0px 20% 10px 20%; width:60%" class="form-control" name="sexe" required>
                     <option value ="M">Male</option>
                     <option value ="F">Femelle</option>
                 </select> </br>    
                 
                 
                 <label for="typeCheval">TYPE DE CHEVAL </label>
-                <select style="margin:0px 20% 10px 20%; width:60%"  class="form-control" class="TypeCheval"  name="typeCheval">
+                <select style="margin:0px 20% 10px 20%; width:60%"  class="form-control" class="TypeCheval"  name="typeCheval" required>
                 <%
                         ArrayList<TypeCheval> lesTypesChevaux = (ArrayList)request.getAttribute("pLesTypesChevaux");
                         for (int i=0; i<lesTypesChevaux.size();i++){
@@ -122,7 +122,7 @@
                
                 
                 <label for="client">CLIENT </label>
-                <select style="margin:0px 20% 10px 20%; width:60%"  class="form-control" name="client">
+                <select style="margin:0px 20% 10px 20%; width:60%"  class="form-control" name="client" required>
                 <%
                         ArrayList<Client> lesClients = (ArrayList)request.getAttribute("pLesClients");
                         for (int i=0; i<lesClients.size();i++){
@@ -134,7 +134,7 @@
                 </select></br>
                 
                 <label for="pere">PERE DU CHEVAL </label>
-                <select style="margin:0px 20% 10px 20%; width:60%"  class="form-control" name="pere" >
+                <select style="margin:0px 20% 10px 20%; width:60%"  class="form-control" name="pere" required >
                 <%
                         ArrayList<Cheval> lesChevauxPeres = (ArrayList)request.getAttribute("pLesChevauxMales");
                         for (int i=0; i<lesChevauxPeres.size();i++){
@@ -146,7 +146,7 @@
                 </select></br>
                 
                 <label for="mere">MERE DU CHEVAL </label>
-                <select style="margin:0px 20% 10px 20%; width:60%" class="form-control" name="mere" s">
+                <select style="margin:0px 20% 10px 20%; width:60%" class="form-control" name="mere"  required>
                 <%
                         ArrayList<Cheval> lesChevauxMeres = (ArrayList)request.getAttribute("pLesChevauxFemelles");
                         for (int i=0; i<lesChevauxMeres.size();i++){
@@ -159,7 +159,7 @@
                 
                 <div style="text-align:center;">
                 
-                <input type="file" name="imageCheval" accept="image/*" /></br>
+                <input type="file" name="imageCheval" accept="image/*"/></br>
                 <small>Ce boutton ci-dessous ne fonctionne pas pour l'instant </small>
                 </div>
                 

@@ -39,11 +39,7 @@ public class LieuForm {
     erreurs.put(champ, message );
     }
       
-    private void validationId( Integer id ) throws Exception {
-        if ( id == null || id <= 0 ) {
-        throw new Exception( "L'id doit être indiqué." );
-        }
-    }
+    
       
     private void validationVille( String ville ) throws Exception {
         if ( ville == null || ville.length() < 2 ) {
@@ -77,16 +73,12 @@ public class LieuForm {
       
         Lieu unLieu  = new Lieu();
         
-        String id = getDataForm (request, "id");
+        //String id = getDataForm (request, "id");
         String ville = getDataForm( request, "ville");
         String nbBoxes = getDataForm(request,"nbBoxes");
         String commentaire = getDataForm(request,"commentaire");
         
-       try {
-             validationId( Integer.parseInt(id) );
-        } catch ( Exception e ) {
-            setErreur( "id", e.getMessage() );
-        }
+      
        
        try {
              validationVille( ville );
@@ -114,15 +106,7 @@ public class LieuForm {
     
       
       
-      if(id != null){
-          try{
-              unLieu.setId(Integer.parseInt(id));
-          }
-          catch( Exception e ){
-               System.out.println("Erreur : "+e);
-          }
-          
-      }
+      
       unLieu.setVille(ville);
       
       if(nbBoxes != null){

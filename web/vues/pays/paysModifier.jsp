@@ -25,10 +25,10 @@
     <body style="position: relative; min-height: 100vh;">
         <div style="padding-bottom: 50px">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="../index.html">
                <img src="../vues/images/logo.jpg" width="50" height="40" style="display: inline-block;">
             </a>
-  <a class="navbar-brand" href="#">Equida</a>
+  <a class="navbar-brand" href="../index.html">Equida</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -47,6 +47,7 @@
           <a class="dropdown-item" href="../ServletAdmin/listerLesLieux">Lister Les Lieux</a>
           <a class="dropdown-item" href="../ServletAdmin/listerLesPays">Lister Les Pays</a>
           <a class="dropdown-item" href="../ServletAdmin/listerLesCategVente">Lister Les CategVentes</a>
+          <a class="dropdown-item" href="../ServletClient/listerLesClients">Lister Les Clients</a>
         </div>
       </li>
       </li>

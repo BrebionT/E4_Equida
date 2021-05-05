@@ -46,6 +46,7 @@
           <a class="dropdown-item" href="../ServletAdmin/listerLesLieux">Lister Les Lieux</a>
           <a class="dropdown-item" href="../ServletAdmin/listerLesPays">Lister Les Pays</a>
           <a class="dropdown-item" href="../ServletAdmin/listerLesCategVente">Lister Les CategVentes</a>
+          <a class="dropdown-item" href="../ServletClient/listerLesClients">Lister Les Clients</a>
         </div>
       </li>
       </li>

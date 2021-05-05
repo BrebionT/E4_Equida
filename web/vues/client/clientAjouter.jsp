@@ -87,30 +87,30 @@
         <form class="form-inline" action="ajouterClient" method="POST" style="width:50%; margin-bottom:170px; background-color: #eee; border:1px solid black; border-radius: 1%">
             <div style="width:100%; margin-top:10px">
                 <label for="nom">NOM :</label>
-                <input class="form-control" style="margin:0px 20% 10px 20%; width:60%" id="nom" type="text" name="nom" maxlength="30">
+                <input class="form-control" style="margin:0px 20% 10px 20%; width:60%" id="nom" type="text" name="nom" maxlength="30" required>
                 </br>
 
                 <label for="prenom">PRENOM :</label>
-                <input class="form-control" style="margin:0px 20% 10px 20%; width:60%" id="prenom"  type="text"  name="prenom" maxlength="30">
+                <input class="form-control" style="margin:0px 20% 10px 20%; width:60%" id="prenom"  type="text"  name="prenom" maxlength="30" required>
                  </br>
 
                 <label for="rue">RUE :</label>
-                <input class="form-control" style="margin:0px 20% 10px 20%; width:60%" id="rue"  type="text"  name="rue"  maxlength="50">
+                <input class="form-control" style="margin:0px 20% 10px 20%; width:60%" id="rue"  type="text"  name="rue"  maxlength="50" required>
                  </br>
 
 
                 <label for="copos">CODE POSTAL :</label>
-                <input class="form-control" style="margin:0px 20% 10px 20%; width:60%" id="copos"  type="text"  name="copos"  maxlength="5">
+                <input class="form-control" style="margin:0px 20% 10px 20%; width:60%" id="copos"  type="text"  name="copos"  maxlength="5" required>
                 </br>
 
                 <label for="ville">VILLE :</label>
-                <input class="form-control" style="margin:0px 20% 10px 20%; width:60%" id="ville"  type="text"  name="ville"  maxlength="40">
+                <input class="form-control" style="margin:0px 20% 10px 20%; width:60%" id="ville"  type="text"  name="ville"  maxlength="40" required>
                 </br>
 
                 <%-- Champ Liste des pays --%>
                 <label for="codePays">PAYS :</label>
 
-                <select class="form-control" style="margin:0px 20% 10px 20%; width:60%" name="codePays" id="codePays">
+                <select class="form-control" style="margin:0px 20% 10px 20%; width:60%" name="codePays" id="codePays" required>
                     <%
                         ArrayList<Pays> lesPays = (ArrayList)request.getAttribute("pLesPays");
                         for (int i=0; i<lesPays.size();i++){
@@ -122,7 +122,7 @@
                 </br>
 
                 <label for="categVente">CATEGORIE VENTE :</label>
-                <select class="form-control" style="margin:0px 20% 10px 20%; width:60%" name="categVente"  >
+                <select class="form-control" style="margin:0px 20% 10px 20%; width:60%" name="categVente" required >
                 <%
                         ArrayList<CategVente> lesCategVente = (ArrayList)request.getAttribute("pLesCategVente");
                         for (int i=0; i<lesCategVente.size();i++){

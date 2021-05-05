@@ -35,12 +35,12 @@ public class LieuDAO {
             // id (clé primaire de la table client) est en auto_increment,donc on ne renseigne pas cette valeur
             // la paramètre RETURN_GENERATED_KEYS est ajouté à la requête afin de pouvoir récupérer l'id généré par la bdd (voir ci-dessous)
             // supprimer ce paramètre en cas de requête sans auto_increment.
-            requete=connection.prepareStatement("INSERT INTO lieu ( id, ville, nbBoxes,commentaire)\n" +
-                    "VALUES (?,?,?,?)", requete.RETURN_GENERATED_KEYS );
-            requete.setInt(1, unLieu.getId());
-            requete.setString(2, unLieu.getVille());
-           requete.setInt(3, unLieu.getNbBoxes());
-            requete.setString(4,unLieu.getCommentaires());
+            requete=connection.prepareStatement("INSERT INTO lieu ( ville, nbBoxes,commentaire)\n" +
+                    "VALUES (?,?,?)", requete.RETURN_GENERATED_KEYS );
+            //requete.setInt(1, unLieu.getId());
+            requete.setString(1, unLieu.getVille());
+           requete.setInt(2, unLieu.getNbBoxes());
+            requete.setString(3,unLieu.getCommentaires());
             
              System.out.println(unLieu.getVille());
             System.out.println(unLieu.getNbBoxes());

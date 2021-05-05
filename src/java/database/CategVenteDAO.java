@@ -30,7 +30,7 @@ public class CategVenteDAO {
         try
         {
             //preparation de la requete     
-            requete=connection.prepareStatement("select * from categvente where categvente.archive IS NULL OR categvente.archive=0");
+            requete=connection.prepareStatement("select * from categvente where categvente.archive is null or categvente.archive=0");
             
             //executer la requete
             rs=requete.executeQuery();
@@ -55,7 +55,7 @@ public class CategVenteDAO {
         try
         {
             //preparation de la requete
-            requete=connection.prepareStatement("INSERT INTO categvente ( code, libelle)\n" +
+            requete=connection.prepareStatement("insert into categvente ( code, libelle)\n" +
                     "VALUES (?,?)");
             requete.setString(1, uneCategVente.getCode());
             requete.setString(2, uneCategVente.getLibelle());
@@ -110,7 +110,7 @@ public class CategVenteDAO {
         try
         {
             //preparation de la requete
-            requete=connection.prepareStatement("UPDATE categvente SET libelle=? WHERE code=?");
+            requete=connection.prepareStatement("update categvente set libelle=? where code=?");
             System.out.println("CATEG requete="+requete);
             
             requete.setString(1, uneCategVente.getLibelle());
